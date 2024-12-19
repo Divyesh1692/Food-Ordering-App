@@ -23,6 +23,10 @@ app.use("/restaurants", restaurantRouter);
 app.use("/foods", foodRouter);
 app.use("/orders", orderRouter);
 
+app.get("/", (req, res) => {
+  res.send("Welcome to the Food Order App API");
+});
+
 app.listen(PORT, () => {
   console.log("listening...");
   dbConnect();
