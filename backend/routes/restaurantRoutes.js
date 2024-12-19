@@ -11,7 +11,7 @@ const { auth, checkRole } = require("../middleware/authMiddleware");
 const restaurantRouter = Router();
 
 restaurantRouter.post("/", auth, checkRole(["superadmin"]), create);
-restaurantRouter.get("/", auth, checkRole(["superadmin"]), getAllRestaurants);
+restaurantRouter.get("/", auth, getAllRestaurants);
 restaurantRouter.patch(
   "/:id",
   auth,
